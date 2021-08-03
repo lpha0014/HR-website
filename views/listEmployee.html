@@ -1,0 +1,65 @@
+<html>
+<head>
+    <link rel="stylesheet" type = "text/css" href="style.css"/>
+    <a href="/">Home</a>
+    <a href="/newEmployee">New Employee</a>
+    <style>
+        table,th,td {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            }
+            table {
+            table-layout: fixed ;
+            }
+            td {
+            width: 25% ;
+            }
+        th {
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+			}   
+        td, th {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    
+  tr:nth-child(even){background-color: #f2f2f2;}
+
+  tr:hover {background-color: #ddd;}
+
+    </style>
+</head>
+<body>
+    <h1> Employee Table
+    </h1>
+    </br>
+    <h3>List of employees:
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Department</th>
+            </tr>
+            <% for ( let i =0; i< empDb.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= empDb[i].id %>
+                    </td>
+                    <td>
+                        <%= empDb[i].name %>
+                    </td>
+                    <td>
+                        <%= empDb[i].dob %>
+                    </td>
+                    <td>
+                        <%= empDb[i].department %>
+                    </td>
+                </tr>
+                <% }%>
+     </table>
+    </h3>
+</body>
+</html>
